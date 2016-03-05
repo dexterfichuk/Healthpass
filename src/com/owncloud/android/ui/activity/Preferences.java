@@ -34,6 +34,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.net.Uri;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.Tag;
+import android.nfc.tech.Ndef;
+import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -325,7 +330,8 @@ public class Preferences extends PreferenceActivity
             }
             
         }
-        
+
+        //THIS IS THE SPOT
         boolean feedbackEnabled = getResources().getBoolean(R.bool.feedback_enabled);
         Preference pFeedback =  findPreference("feedback");
         if (pFeedback != null){
@@ -333,25 +339,25 @@ public class Preferences extends PreferenceActivity
                 pFeedback.setOnPreferenceClickListener(new OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        String feedbackMail   =(String) getText(R.string.mail_feedback);
-                        String feedback   =(String) getText(R.string.prefs_feedback) + " - android v" + appVersion;
-                        Intent intent = new Intent(Intent.ACTION_SENDTO); 
-                        intent.setType("text/plain");
-                        intent.putExtra(Intent.EXTRA_SUBJECT, feedback);
-                        
-                        intent.setData(Uri.parse(feedbackMail)); 
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
-                        startActivity(intent);
-                        
+                        //String feedbackMail   =(String) getText(R.string.mail_feedback);
+                        String feedback   =(String) getText(R.string.prefs_feedback);
+                        //Intent intent = new Intent(Intent.ACTION_SENDTO);
+//                        intent.setType("text/plain");
+//                        intent.putExtra(Intent.EXTRA_SUBJECT, feedback);
+//
+//                        intent.setData(Uri.parse(feedbackMail));
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(intent);
+
                         return true;
                     }
                 });
             } else {
                 preferenceCategory.removePreference(pFeedback);
             }
-            
+
         }
-        
+
         boolean imprintEnabled = getResources().getBoolean(R.bool.imprint_enabled);
         Preference pImprint =  findPreference("imprint");
         if (pImprint != null) {
