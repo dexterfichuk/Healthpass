@@ -4,6 +4,7 @@
     <string name="about_android">%1$s Android app</string>
     <string name="about_version">version %1$s</string>
     <string name="actionbar_sync">Refresh account</string>
+    <string name="actionbar_submit">+Info</string>
     <string name="actionbar_upload">Upload</string>
     <string name="actionbar_upload_from_apps">Content from other apps</string>
     <string name="actionbar_upload_files">Files</string>
@@ -45,7 +46,7 @@
     <string name="prefs_log_delete_history_button">Delete history</string>
     <string name="prefs_help">Help</string>
     <string name="prefs_recommend">Recommend to a friend</string>
-    <string name="prefs_feedback">Write to NFC Tag</string>
+    <string name="prefs_feedback">Add Public Medical Details</string>
     <string name="prefs_imprint">Imprint</string>
     <string name="prefs_remember_last_share_location">Remember share location</string>
     <string name="prefs_remember_last_upload_location_summary">Remember last share upload location</string>

